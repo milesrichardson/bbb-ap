@@ -17,7 +17,7 @@ git clone http://github.com/milesrichardson/mt7601u
 cd mt7601u
 sh ~/bbb-ap/build/mt7601u/unload.sh
 
-if [ "$1" == "build"]; then
+if [ "$1" == "build" ]; then
     sh ~/bbb-ap/build/mt7601u/miwifi_build.sh
 fi
 
