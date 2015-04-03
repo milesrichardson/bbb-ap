@@ -19,7 +19,7 @@ cp configs/etc/rc.local /etc/rc.local
 
 # Deps
 cd build
-git clone http://github.cocm/milesrichardson/mt7601u
+git clone http://github.com/milesrichardson/mt7601u
 
 # mt7601u: Unload modules, build and deploy again
 cd mt7601u
