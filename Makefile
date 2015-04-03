@@ -21,5 +21,8 @@ attach:
 update:
 	./local_scripts/update.sh
 
+update_full:
+	./local_scripts/update_full.sh
+
 reboot:
 	./local_scripts/reboot.sh

@@ -1,19 +1,13 @@
 #!/bin/bash
 
-# Update beaglebone from host machine
-
-# Assumes buildroot exists and kernel has been updated
-
-# This is meant for quick updating
-
-
+# Update and build drivers
 
 # Create buildroot on beaglebone and update kernel
-echo "Warning: This will delete any work-in-progress."
+echo "Warning: Will update repo and rebuild drivers"
 read -p "If sure, [Enter]. To cancel, Ctrl + C"
 
 ssh root@192.168.2.2 'bash -s' < remote_scripts/clean.sh
-ssh root@192.168.2.2 'bash -s' < remote_scripts/update.sh
+ssh root@192.168.2.2 'bash -s' < remote_scripts/update.sh build
 echo "Done"
 
 # Optionally attach to a new SSH session
