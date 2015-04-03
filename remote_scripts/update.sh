@@ -17,12 +17,16 @@ cd build
 if [ "$1" == "build" ]; then
     rm -rf mt7601u
     git clone http://github.com/milesrichardson/mt7601u
-    sh ~/bbb-ap/build/mt7601u/unload.sh
-    sh ~/bbb-ap/build/mt7601u/miwifi_build.sh
-fi
+    cd mt7601u
 
-# mt7601u: Unload modules, build and deploy again
-cd mt7601u
-ifdown ra0
-sh ~/bbb-ap/build/mt7601u/unload.sh
-sh ~/bbb-ap/build/mt7601u/miwifi_work.sh
+    ifdown ra0
+    ./unload.sh
+    ./miwifi_build.sh
+else
+    cd mt7601u
+    git pull
+    ifdown ra0
+    ./unload.sh
+    ./miwifi_work.sh
+
+fi
