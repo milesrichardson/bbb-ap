@@ -4,6 +4,13 @@
 # Update kernel
 sh /opt/scripts/tools/update_kernel.sh
 
+# Update and upgrade packages
+apt-get update
+apt-get upgrade
+
+# Necessary for building kernel packages
+apt-get install -y linux-headers-$(uname-r)
+
 # Create (and delete if exists) buildroot at ~/bbb-ap
 cd ~
 rm -rf bbb-ap
