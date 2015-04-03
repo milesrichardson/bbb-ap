@@ -6,6 +6,8 @@ mkdir ~/build
 cd ~/build
 
 git clone https://github.com/milesrichardson/bbb-ap .
-cd mt7601u
-git pull
-cd ..
+cd bbb-ap/build
+
+# Deps
+
+git clone https://github.com/milesrichardson/mt7601u
