@@ -19,14 +19,13 @@ if [ "$1" == "build" ]; then
     git clone http://github.com/milesrichardson/mt7601u
     cd mt7601u
 
-    ifdown ra0
     ./unload.sh
     ./miwifi_build.sh
 else
     cd mt7601u
     git pull
-    ifdown ra0
-    ./unload.sh
-    ./miwifi_work.sh
-
 fi
+
+ifdown ra0
+./unload.sh
+./miwifi_work.sh
