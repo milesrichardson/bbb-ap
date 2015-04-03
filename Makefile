@@ -1,8 +1,10 @@
 # Usually should happen on remote
-PHONY += all clean flash
+PHONY += all clean flash attach update
 
 all:
 	flash
+	update
+	attach
 
 clean:
 	mv build/readme.md readme.tmp.md
