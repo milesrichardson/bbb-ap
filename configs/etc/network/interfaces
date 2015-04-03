@@ -1,0 +1,18 @@
+# This should cover eth0 too
+iface default inet dhcp
+
+auto lo
+iface lo inet loopback
+
+# Wireless access point
+allow-hotplug ra0
+iface ra0 inet static
+  address 192.168.199.1
+  netmask 255.255.255.0
+
+# USB serial connection
+iface usb0 inet static
+    address 192.168.7.2
+    netmask 255.255.255.0
+    network 192.168.7.0
+    gateway 192.168.7.1

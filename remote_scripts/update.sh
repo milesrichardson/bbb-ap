@@ -11,6 +11,12 @@ make clean
 
 git pull
 
+# Config files
+cp configs/etc/udhcpd.conf /etc/udhcpd.conf
+cp configs/etc/default/udhcpd /etc/default/udhcpd
+cp configs/etc/network/interfaces /etc/network/interfaces
+cp configs/etc/rc.local /etc/rc.local
+
 # Deps
 cd build
 git clone http://github.com/milesrichardson/mt7601u
