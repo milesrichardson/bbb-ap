@@ -3,6 +3,8 @@
 # Copyright Miles Richardson, March 2015
 #
 
+cd ~/bbb-ap
+
 # Config files
 cp configs/etc/udhcpd.conf /etc/udhcpd.conf
 cp configs/etc/default/udhcpd /etc/default/udhcpd
