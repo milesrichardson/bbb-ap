@@ -23,6 +23,4 @@ cd build
 git clone https://github.com/milesrichardson/mt7601u
 
 # Run update script
-cd ../remote_scripts
-
-./update.sh
+sh ~/bbb-ap/build/remote_scripts/update.sh

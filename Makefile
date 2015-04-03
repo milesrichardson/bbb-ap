@@ -20,3 +20,6 @@ attach:
 
 update:
 	./local_scripts/update.sh
+
+reboot:
+	./local_scripts/reboot.sh
