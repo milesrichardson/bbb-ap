@@ -1,5 +1,7 @@
 #!/bin/sh -e
 
+cd ~
+
 # Script sent to remote server over SSH to pull down this repo
 rm -rf ~/build
 mkdir ~/build
