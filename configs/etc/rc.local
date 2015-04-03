@@ -1,5 +1,5 @@
 #!/bin/sh
 
-sh ~/bbb-ap/remote_scripts/post_boot.sh
+sh /root/bbb-ap/remote_scripts/post_boot.sh
 
 exit 0
