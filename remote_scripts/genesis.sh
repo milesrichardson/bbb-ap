@@ -10,6 +10,7 @@ apt-get upgrade
 
 # Necessary for building kernel packages
 apt-get install -y linux-headers-$(uname-r)
+apt-get install -y udhcpd
 
 # Create (and delete if exists) buildroot at ~/bbb-ap
 cd ~
@@ -20,3 +21,8 @@ cd bbb-ap
 # Load deps into ~/bbb-ap/build
 cd build
 git clone https://github.com/milesrichardson/mt7601u
+
+# Run update script
+cd ../remote_scripts
+
+./update.sh
