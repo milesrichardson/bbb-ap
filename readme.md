@@ -26,43 +26,7 @@ wait. loading image onto SD card.
 
     diskutil eject /dev/disk3
 
-
-# Subtree workflow for mt7601u dep
-
-From http://blogs.atlassian.com/2013/05/alternatives-to-git-submodule-git-subtree/
-
-## First time (already did this, should not have to do again)
-
-Probably best to do this with no staged changes.
-
-Add dependency as a git remote:
-
-    git remote add -f mt7601u https://github.com/milesrichardson/mt7601u.git
-
-Record merge to get starting state of tree history:
-
-    git merge -s ours --no-commit mt7601u/master
-
-Expect output:
-
-    Automatic merge went well; stopped before committing as requested
-
-Delete the local directory if it already exists:
-
-    rm -rf mt7601u || echo "Already clean"
-
-Read content of subtree object into working directory, ready to commit:
-
-    git read-tree --prefix=mt7601u/ -u mt7601u/master
-
-Now ready for initial commit:
-
-    git commit -m"[subtree - mt7601u] added mt7601u dependency"
-
-## To update mt7601u
-
-    git pull -s subtree mt7601u master
-
+# Dependencies
 
 # Get driver
     lsusb -t
