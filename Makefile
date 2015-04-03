@@ -21,6 +21,10 @@ attach:
 update:
 	./local_scripts/update.sh
 
+update_vpn:
+	./local_scripts/update_vpn.sh
+
+# update AND rebuild mt7601u drivers
 update_full:
 	./local_scripts/update_full.sh
 
