@@ -4,6 +4,47 @@ Tested with:
     
     md5:c848627722b7a5f7bc89791cc8949e3b
 
+# TODO
+
+Flash new debian image onto beaglebone
+
+Plug beaglebone behind NAT
+
+Verify wifi is working
+
+Test softether VPN client on mac
+
+Install softether VPN and configure SSL 
+
+
+# softether client
+
+http://lukeluo.blogspot.com/2013/11/how-to-set-up-softehter-vpn-client.html
+
+## ip routes
+
+to get ip address:
+
+    ip addr show vpn_tap_vpn
+
+router is
+
+    192.168.250.1
+
+ip route add <vpnIP>/32 via <default> dev <default interface>
+ip route del default
+
+ip route add default via <localrouterIP> dev tap_vpn_tap
+ip route show
+
+## reset ip routes
+
+ip route del default
+ip route add default via 102.236.192.1 dev eth0
+ip route del 45.56.99.206/32
+
+
+
 
 # Load debian image onto SD card (Mac OS X)
 
@@ -25,15 +66,19 @@ run again
 
 determine which /dev/diskN is the sd card
 
-execute:
+unmount it so we don't get "resource busy" errors from mac mounting it:
 
-    sudo dd if=/path/to/downloaded.img of /dev/rdiskN bs=1m
+    diskutil unmountDisk /dev/diskN
+
+now flash the SD card:
+
+    sudo dd if=/path/to/downloaded.img of=/dev/rdiskN bs=1m
 
 wait. loading image onto SD card.
 
     diskutil eject /dev/diskN
 
-# Flash beaglebone with image
+# Flash beaglebone with debian image from SD card
 
 power down, unplug beagle bone black
 
@@ -45,7 +90,7 @@ while holding, insert power (5V barrel connector preferred over USB)
 
 continue holding until all 4 LED lights flash solid, then let go
 
-wait a bit.
+wait for it to boot so you can connect to it.
 
 # Connect to beaglebone
 

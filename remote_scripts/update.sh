@@ -15,17 +15,17 @@ cp configs/etc/rc.local /etc/rc.local
 cd build
 
 if [ "$1" == "build" ]; then
-    rm -rf mt7601u
+    rm -rf mt7601u || true
     git clone http://github.com/milesrichardson/mt7601u
     cd mt7601u
 
-    ./unload.sh
+    ./unload.sh || true
     ./miwifi_build.sh
 else
     cd mt7601u
     git pull
 fi
 
-ifdown ra0
-./unload.sh
+ifdown ra0 || true
+./unload.sh || true
 ./miwifi_work.sh
